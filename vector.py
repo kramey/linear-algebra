@@ -31,7 +31,7 @@ class Vector(object):
         return Vector(map(operator.sub, self.coordinates, v.coordinates))
 
     def scale(self, scalar):
-        self.coordinates = [x*scalar for x in self.coordinates]
+        return Vector([x*scalar for x in self.coordinates])
 
 
 if __name__ == "__main__":
@@ -43,5 +43,4 @@ if __name__ == "__main__":
     print my_vector == my_vector3
     print 'my_vector + my_vector2' ,my_vector.add(my_vector2)
     print 'my_vector - my_vector3' ,my_vector.subtract(my_vector3)
-    my_vector2.scale(3)
-    print 'my_vector2 scaled by 3' ,my_vector2
+    print 'my_vector2 scaled by 3' ,my_vector2.scale(3)
