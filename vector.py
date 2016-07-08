@@ -1,4 +1,6 @@
 import operator
+import math
+
 
 class Vector(object):
     def __init__(self, coordinates):
@@ -34,6 +36,14 @@ class Vector(object):
         return Vector([x*scalar for x in self.coordinates])
 
 
+    def magnitude(self):
+        return math.sqrt(sum([x*x for x in self.coordinates]))
+
+    def normalize(self):
+        norm = 1.0/self.magnitude()
+        return Vector([x*norm for x in self.coordinates])
+
+
 if __name__ == "__main__":
     my_vector = Vector((1,2,3))
     print my_vector
@@ -44,3 +54,6 @@ if __name__ == "__main__":
     print 'my_vector + my_vector2' ,my_vector.add(my_vector2)
     print 'my_vector - my_vector3' ,my_vector.subtract(my_vector3)
     print 'my_vector2 scaled by 3' ,my_vector2.scale(3)
+
+    print my_vector.magnitude()
+    print my_vector.normalize(), my_vector.normalize().magnitude()
