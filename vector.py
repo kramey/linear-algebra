@@ -34,13 +34,14 @@ class Vector(object):
         self.coordinates = [x*scalar for x in self.coordinates]
 
 
-my_vector = Vector((1,2,3))
-print my_vector
-my_vector2 = Vector((1,2,3))
-my_vector3 = Vector((-1,2,3))
-print my_vector == my_vector2
-print my_vector == my_vector3
-print 'my_vector + my_vector2' ,my_vector.add(my_vector2)
-print 'my_vector - my_vector3' ,my_vector.subtract(my_vector3)
-my_vector2.scale(3)
-print 'my_vector2 scaled by 3' ,my_vector2
+if __name__ == "__main__":
+    my_vector = Vector((1,2,3))
+    print my_vector
+    my_vector2 = Vector((1,2,3))
+    my_vector3 = Vector((-1,2,3))
+    print my_vector == my_vector2
+    print my_vector == my_vector3
+    print 'my_vector + my_vector2' ,my_vector.add(my_vector2)
+    print 'my_vector - my_vector3' ,my_vector.subtract(my_vector3)
+    my_vector2.scale(3)
+    print 'my_vector2 scaled by 3' ,my_vector2
