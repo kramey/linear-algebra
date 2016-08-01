@@ -3,6 +3,9 @@ import math
 
 
 class Vector(object):
+    """
+    Vector operations based on Udacity Linear Algebra refresher course.
+    """
     def __init__(self, coordinates):
         try:
             if not coordinates:
